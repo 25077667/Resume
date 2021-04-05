@@ -1,0 +1,320 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo, 25077667
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\begin{comment}
+Can add a comment anywhere.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+
+\begin{minipage}[c]{0.05\textwidth}
+    \-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+    \begin{tikzpicture}
+        \clip (0,0) circle (1.75cm);
+        \node at (0,-.7) {\includegraphics[width = \textwidth]{images/tmpPhoto.png}};
+        % if necessary the picture may be moved by changing the at (coordinates)
+        % width defines the 'zoom' of the picture
+    \end{tikzpicture}
+    \hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.4\textwidth}
+    \textbf{\Huge \scshape{Chih-Hsuan Yang}} \\ \vspace{1pt}
+    % \scshape sets small capital letters, remove if desired
+    % \small{+1 123-456-7890} \\
+    \href{mailto:zxc25077667@protonmail.com}{Email: \underline{zxc25077667@protonmail.com}}\\
+    % Be sure to use a professional *personal* email address
+    % \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+    % you should adjust you linked in profile name to be professional and recognizable
+    \href{https://github.com/25077667}{GitHub: \underline{github.com/25077667}}
+\end{minipage}
+
+% Without picture
+%\begin{center}
+%    \textbf{\Huge \scshape Charles Rambo} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+%    \small +1 123-456-7890 $|$ 
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}} $|$\\
+%    % Be sure to use a professional *personal* email address
+%    \href{https://linkedin.com/in/your-name-here}{\underline{linkedin.com/in/charles-rambo}} $|$
+%    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{center}
+
+
+
+\begin{comment}
+This CV was written for specifically for positions I was applying for in
+academia, and then modified to be a template.
+
+A standard CV is about two pages long where as a resume in the US is one page.
+sections can be added and removed here with this in mind. In my experience,
+education, and applicable work experience and skills are the most import things
+to include on a resume. For a CV the Europass CV suggests the categories: Work
+Experience, Education and Training, Language Skills, Digital Skills,
+Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
+Driver's License, Hobbies and Interests, Honors and Awards, Management and
+Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
+Publications, Recommendations, Social and Political Activities, Volunteering.
+
+Your goal is to convey a who, what , when, where, why for every item you share.
+The who is obviously you, but I believe the rest should be done in that order.
+For example below. An employer cares most about the degree held and typically
+less about the institution or where it is located (This is still good
+information though). Whatever order you choose be consistent throughout.
+\end{comment}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+\CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+\CVSubheading
+{Bachelor of Computer Science and Engineering}{Sep. 2018 -- May 2022(planned)}
+{National Sun Yat-sen University}{Taiwan, ROC}
+
+\CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+\CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+
+\CVSubheading
+{Operating System Teaching Assistant}{February 2021 -- June 2021}
+{Department of Computer Science and Engineering, NSYSU}{Kaohsiung, Taiwan}
+\CVItemListStart
+\CVItem{Introduce the operating system.}
+\CVItem{Help classmate any question about operating system.}
+\CVItemListEnd
+
+\CVSubheading
+{Club's Founding President}{September 2019 -- June 2021}
+{Information Security Club, NSYSU}{Kaohsiung, Taiwan}
+\CVItemListStart
+\CVItem{Teaching}
+\CVItem{Server maintainer}
+\CVItemListEnd
+
+\CVSubheading
+{Information Security Engineering Intern}{June 2019 -- August 2019}
+{Telecom Technology Center}{Kaohsiung, Taiwan}
+\CVItemListStart
+\CVItem{Develop automatic apk vulnerability detection tool chain.}
+\CVItem{Study static analysis tool which look for bugs in Java code.(SpotBugs)}
+\CVItemListEnd
+
+\CVSubHeadingListEnd
+
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\begin{comment}
+Ideally the title of the work should speak for what it is. However if you feel
+like you should explain more about why the project is applicable to this job,
+use item list as is shown in the work experience section.
+\end{comment}
+
+\section{Projects and Research}
+\CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+\CVSubheading
+{The Container Security in Healthcare Data Exchange System}{start from February 2021}
+{Bachelor's degree graduation project}{}
+
+\CVSubheading
+{{NSYSU reCAPTCHA solver} $|$ \emph{\small{C++}, \small{Python}}}{Spring 2021}
+{CNN recognizor with Ernest Chu}{}
+
+\CVSubheading
+{{Arduino Remote Airplane} $|$ \emph{\small{JS}, \small{Arduino}}}{Fall 2018}
+{Control airplane easily by your phone}{}
+
+\CVSubheading
+{Automatic Farm Control system $|$ \emph{\small{Raspberry pi}, \small{Arduino}}}{Summer 2018}
+{An IoT, smart home project}{}
+
+\CVSubHeadingListEnd
+
+%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
+\begin{comment}
+Again the title should have already been enough, but if it is necessary to add
+descriptions maintain the consistency from prior sections
+\end{comment}
+
+\section{Conferences and Presentations}
+\CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Work Presented}{When}
+%      {Occasion}{}
+\CVSubheading
+{Photometric Filter Fidelity and Use for Be Star Identification}{November 2017}
+{Austin College Physics Research Seminar}{}
+\CVSubHeadingListEnd
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors and Awards}
+\CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+\CVSubheading
+{Dean's List}{Fall 2017}
+{Recognition for to 20\% of students in academics at Austin College}{}
+\CVSubHeadingListEnd
+
+%-----TEACHING EXPERIENCE------------------------------------------------------
+\begin{comment}
+Section is here as it applied to my application for positions in academia.
+Remember to tailor the resume for to the position.
+\end{comment}
+
+\section{Teaching Experience}
+\CVSubHeadingListStart
+%    \CVSubheading
+%      {What}{When}
+%      {School}{Where}
+\CVSubheading
+{High School Physics (11 Weeks Teaching/Observing)}{Fall 2017}
+{Denison High School}{Denison, TX}
+\CVSubHeadingListEnd
+
+%-----COMMUNITY INVOLVEMENT----------------------------------------------------
+\section{Community Involvement}
+\CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+\CVSubheading
+{Austin College Community Tutors}{Fall 2017 -- Fall 2018}
+{Free tutoring for local students in science and mathematics}{Sherman, TX}
+\CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+          \textbf{Languages}{: Chinese (Native), English} \\
+          \textbf{Programming}{: C++17, C (Linux kernel), Shell script, Python, Golang } \\
+          \textbf{Skill}{: Linux, Docker, Git, Nginx, mongoDB } \\
+          \textbf{Document Creation}{: \LaTeX, Markdown} \\
+          }}
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\end{document}

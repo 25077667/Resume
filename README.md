@@ -9,4 +9,7 @@ Then... I make it!
 Will be written by LaTeX
 
 ## My blog
-[My blog](hackmd.io/@25077667/blog)
+[My blog](https://hackmd.io/@25077667/blog)
+
+## My Resume
+[My resume](resume/resume.pdf)

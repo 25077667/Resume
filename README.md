@@ -2,7 +2,8 @@
 My resume and CV
 
 ## Why I need this?
-I thick I need a resume and some CVs.
+I think I need a resume and some CVs.
+
 Then... I make it!
 
 ## LaTeX

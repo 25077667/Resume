@@ -1,0 +1,98 @@
+\documentclass{beamer}
+\usepackage{hyperref, multicol, xcolor}
+\usetheme{Ilmenau}
+
+\hypersetup{
+  colorlinks,
+  citecolor=violet,
+  linkcolor=red,
+  urlcolor=blue}
+
+\title{About me}
+\author{Chih-Hsuan Yang}
+
+\begin{document}
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Bachelor's degree graduation project}
+\begin{frame}{The Container Security in Healthcare Data Exchange System}
+    \begin{beamerboxesrounded}{Idea}
+        Fine-grained program has fine-grained system call permissions.
+    \end{beamerboxesrounded}
+    micro-programs / micro-kernel
+\end{frame}
+
+\begin{frame}{Researches}
+    \begin{itemize}
+        \item System call collection set
+        \item Namespace \& Cgroup secure policy
+        \item File secure policy
+        \item Kernel exploit prevention
+        \item Sandbox performance benchmark
+    \end{itemize}
+\end{frame}
+
+\section{Side projects}
+\begin{frame}{LKMPG}
+    \begin{multicols*}{2}
+        {Contributor of the Linux Kernel Module Programming Guide (updated for 5.x kernels)\\
+            \url{https://sysprog21.github.io/lkmpg/}}
+        \includegraphics[width=.52\textheight]{images/lkmpg.png}
+    \end{multicols*}
+\end{frame}
+
+\begin{frame}{Debian reference}
+    \begin{multicols*}{2}
+        {
+            \href{https://www.debian.org/doc/manuals/debian-reference/index.zh-tw.html}{Debian Reference}, a terse user's guide with the focus on the shell command line.\\
+            \href{https://salsa.debian.org/debian/debian-reference/-/blob/latest/po/zh-tw.add}{First traditional Chinese translator}
+        }
+        \includegraphics[width=.5\textwidth]{images/debian.png}
+    \end{multicols*}
+\end{frame}
+
+\begin{frame}{High scalable VPN server}
+    \begin{itemize}
+        \item \href{https://scc-net.tw/nextcloud/s/D5JSGsRgEayTYkE}{Video demo}
+        \item \href{https://github.com/25077667/scalable_wg}{GitHub}
+        \item Low-cost, Scalability, Optimizing
+        \item Can it be auto-tuned?
+        \item Runtime load balancer?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{My cloud}
+    Distributed private server with docker swarm
+    \begin{itemize}
+        \item load balancer
+        \item Nextcloud
+        \item VPN
+    \end{itemize}
+\end{frame}
+
+\section{Misc}
+\begin{frame}{Clean code philosophy}
+    \centering
+    \href{https://dorm.scc-net.tw/}{Code review}
+\end{frame}
+
+\begin{frame}{Assignment extentions}
+    \begin{itemize}
+        \item Macro meta-programming (System Programming prof. Richard Lin)
+        \item Impl. partial GNU tar extension (Object-Oriented Programming prof. Chiang)
+        \item Full HTTP stack based on TCP over UDP (Computer Network prof. Wei-Kuang Lai)
+        \item $\vdots$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{SystemC pull request}
+    Story and \href{https://github.com/accellera-official/systemc/pull/25}{Link}
+\end{frame}
+
+\end{document}

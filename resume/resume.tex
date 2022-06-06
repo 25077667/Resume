@@ -1,356 +1,111 @@
-%------------------------------------------------------------------------------
-% CV in Latex
-% Author : Charles Rambo, 25077667
-% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
-% Most recently updated version may be found at https://github.com/fizixmastr 
-% License : MIT
-%------------------------------------------------------------------------------
-
-\documentclass[A4,11pt]{article}
-%\documentclass[letterpaper,11pt]{article} %For use in US
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{tikz}
-\input{glyphtounicode}
-
-\begin{comment}
-Can add a comment anywhere.
-\end{comment}
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
 
 
-%-----FONT OPTIONS-------------------------------------------------------------
-% serif
- \usepackage{palatino}
-% \usepackage{times} %This is the default as well
-% \usepackage{charter}
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
 
-% sans-serif
-% \usepackage{helvet}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+% chinese support
+\usepackage{xeCJK, hyperref}
+\setCJKmainfont{Noto Sans CJK TC}
 
-%-----PAGE SETUP---------------------------------------------------------------
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-1cm}
-\addtolength{\evensidemargin}{-1cm}
-\addtolength{\textwidth}{2cm}
-\addtolength{\topmargin}{-1cm}
-\addtolength{\textheight}{2cm}
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
 
-% Margins for US Letter size
-%\addtolength{\oddsidemargin}{-0.5in}
-%\addtolength{\evensidemargin}{-0.5in}
-%\addtolength{\textwidth}{1in}
-%\addtolength{\topmargin}{-.5in}
-%\addtolength{\textheight}{1.0in}
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+% \definecolor{sectiondivider}{HTML}{5D5D5D}
 
-\urlstyle{same}
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0cm}
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that .pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[rectangle,edge,right]{./src/profile}
+\name{Chih-Hsuan Yang}{(楊志璿)}
+\position{Container Security Researcher{\enskip\cdotp\enskip}DevSecOps}
 
-%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
-\newcommand{\CVItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
+\email{zxc25077667@protonmail.com}
+\homepage{https://scc-net.tw}
+\github{25077667}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \kaggle{kaggle-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+\blog{https://hackmd.io/@25077667/blog}
 
-\newcommand{\CVSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
-    \end{tabular*}\vspace{-7pt}
-}
 
-\newcommand{\CVSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \text{\small#1} & \text{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
-% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
-\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
-\newcommand{\CVItemListStart}{\begin{itemize}}
-\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-%------------------------------------------------------------------------------
-% CV STARTS HERE  %
-%------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \begin{document}
 
-%-----HEADING------------------------------------------------------------------
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
 
-\begin{minipage}[c]{0.05\textwidth}
-  \-\
-\end{minipage}
-\begin{minipage}[c]{0.2\textwidth}
-  \begin{tikzpicture}
-    \clip (0,0) circle (1.75cm);
-    \node at (0,-.7) {\includegraphics[width = \textwidth]{images/tmpPhoto.png}};
-    % if necessary the picture may be moved by changing the at (coordinates)
-    % width defines the 'zoom' of the picture
-  \end{tikzpicture}
-  \hfill\vline\hfill
-\end{minipage}
-\begin{minipage}[c]{0.4\textwidth}
-  \textbf{\Huge \scshape{Chih-Hsuan Yang}} \\ \vspace{1pt}
-  % \scshape sets small capital letters, remove if desired
-  % \small{+1 123-456-7890} \\
-  \href{mailto:zxc25077667@protonmail.com}{Email: \underline{zxc25077667@protonmail.com}}\\ \vspace{1pt}
-  % Be sure to use a professional *personal* email address
-  % \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
-  % you should adjust you linked in profile name to be professional and recognizable
-  \href{https://github.com/25077667}{GitHub: \underline{github.com/25077667}}\\ \vspace{1pt}
-  \href{https://hackmd.io/@25077667/blog}{Blog: \underline{hackmd.io/@25077667/blog}}\\ \vspace{1pt}
-  \href{htts://scc-net.tw}{My website: \underline{scc-net.tw}}
-\end{minipage}
-
-% Without picture
-%\begin{center}
-%    \textbf{\Huge \scshape Charles Rambo} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
-%    \small +1 123-456-7890 $|$ 
-%    \href{mailto:you@provider.com}{\underline{you@provider.com}} $|$\\
-%    % Be sure to use a professional *personal* email address
-%    \href{https://linkedin.com/in/your-name-here}{\underline{linkedin.com/in/charles-rambo}} $|$
-%    % you should adjust you linked in profile name to be professional and recognizable
-%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
-%\end{center}
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+{\today}
+{Chih-Hsuan Yang . Resume}
+{\thepage}
 
 
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+% \input{src/summary.tex}
+\input{src/education.tex}
+\input{src/projects.tex}
+\input{src/skills.tex}
+\input{src/experience.tex}
+\input{src/writing.tex}
 
-\begin{comment}
-This CV was written for specifically for positions I was applying for in
-academia, and then modified to be a template.
-
-A standard CV is about two pages long where as a resume in the US is one page.
-sections can be added and removed here with this in mind. In my experience,
-education, and applicable work experience and skills are the most import things
-to include on a resume. For a CV the Europass CV suggests the categories: Work
-Experience, Education and Training, Language Skills, Digital Skills,
-Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
-Driver's License, Hobbies and Interests, Honors and Awards, Management and
-Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
-Publications, Recommendations, Social and Political Activities, Volunteering.
-
-Your goal is to convey a who, what , when, where, why for every item you share.
-The who is obviously you, but I believe the rest should be done in that order.
-For example below. An employer cares most about the degree held and typically
-less about the institution or where it is located (This is still good
-information though). Whatever order you choose be consistent throughout.
-\end{comment}
-
-%-----EDUCATION----------------------------------------------------------------
-\section{Education}
-\CVSubHeadingListStart
-%    \CVSubheading % Example
-%      {Degree Achieved}{Years of Study}
-%      {Institution of Study}{Where it is located}
-\CVSubheading
-{Researcher at Information Security Lab}{July. 2019 -- May 2022(expected)}
-{National Sun Yat-sen University}{Taiwan, ROC}
-
-\CVSubheading
-{Bachelor of Computer Science and Engineering}{Sep. 2018 -- May 2022(expected)}
-{National Sun Yat-sen University}{Taiwan, ROC}
-\CVItemListStart
-\CVItem{Awardee of scholarships by information security}
-\CVItemListEnd
-
-\CVSubHeadingListEnd
-
-%-----WORK EXPERIENCE----------------------------------------------------------
-\begin{comment}
-try to briefly explain what you did and why it is relevant to the position you
-are seeking
-\end{comment}
-
-\section{Work Experience}
-\CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What you did}{When you worked there}
-%      {Who you worked for}{Where they are located}
-%      \CVItemListStart
-%        \CVItem{Why it is important to this employer}
-%      \CVItemListEnd
-
-\CVSubheading
-{Club's Founding President}{September 2019 -- June 2021}
-{Information Security Club, NSYSU}{Kaohsiung, Taiwan}
-\CVItemListStart
-\CVItem{R\&D, Server Maintainer}
-\CVItem{Teaching, Communicator}
-\CVItemListEnd
-
-\CVSubheading
-{Network manager}{September 2019 -- June 2020}
-{Campus Dormitory Promote Association, NSYSU}{Kaohsiung, Taiwan}
-\CVItemListStart
-\CVItem{Network manager, R\&D}
-\CVItemListEnd
-
-\CVSubheading
-{Information Security Engineer Intern}{June 2019 -- August 2019}
-{Telecom Technology Center}{Kaohsiung, Taiwan}
-\CVItemListStart
-\CVItem{Develop automatic apk vulnerability detection tool chain.}
-\CVItem{Study static analysis tool which look for bugs in Java code.(SpotBugs)}
-\CVItemListEnd
-
-\CVSubHeadingListEnd
-
-%-----PROJECTS AND RESEARCH----------------------------------------------------
-\begin{comment}
-Ideally the title of the work should speak for what it is. However if you feel
-like you should explain more about why the project is applicable to this job,
-use item list as is shown in the work experience section.
-\end{comment}
-
-\section{Projects and Research}
-\CVSubHeadingListStart
-%    \CVSubheading
-%      {Title of Work}{When it was done}
-%      {Institution you worked with}{unused}
-\CVSubheading
-{{My Home Cloud} $|$ \emph{\small{Docker}, \small{NextCloud}, \small{Golang}, \small{Rust}} }{June 2021 -- present}
-{A cloud can fully replace Google}{}
-
-\CVSubheading
-{{My Library} $|$ \emph{\small{Git}, \small{Python}, \small{SQLite}} }{June 2021 -- present}
-{A content searchable distributed academic library}{}
-
-\CVSubheading
-{\href{https://github.com/25077667/Container_Security}{The Container Security in Healthcare Data Exchange System}}{February 2021 -- present}
-{$|$ \textbf{\emph{\small{Docker}, \small{eBPF}, \small{Fuzzing}, \small{Kernel}}}\\ Bachelor's degree graduation project}{}
-
-\CVSubheading
-{\href{https://github.com/25077667/scalable_wg}{High Scalability Wireguard VPN Server} $|$ \emph{\small{Docker}, \small{Golang}}}{April 2021 -- June 2021}
-{Using docker swarm with Heidi Cheng}{}
-
-\CVSubheading
-{{Information Security Club Backend} $|$ \emph{\small{Golang}, \small{Docker}, \small{C++}}}{April 2020 -- August 2021}
-{High concurrency server}{}
-
-\CVSubheading
-{\href{https://github.com/25077667/nsysu-captcha-solver}{NSYSU reCAPTCHA Solver} $|$ \emph{\small{C++}, \small{Python}}}{Spring 2021}
-{Using CNN recognizor with Ernest Chu}{}
-
-\CVSubheading
-{{NTRU Booster on FPGA} $|$ \emph{\small{C}, \small{Verilog}}}{Fall 2020}
-{Using NTT with Max Hsu}{}
-
-\CVSubheading
-{{Arduino Remote Airplane} $|$ \emph{\small{JavaScript}, \small{Arduino}}}{Fall 2018}
-{Control airplane easily by your phone}{}
-
-\CVSubheading
-{Automatic Farm Control System $|$ \emph{\small{Raspberry pi}, \small{Arduino}}}{Summer 2018}
-{An IoT, smart home project}{}
-
-\CVSubHeadingListEnd
-
-%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
-\begin{comment}
-Again the title should have already been enough, but if it is necessary to add
-descriptions maintain the consistency from prior sections
-\end{comment}
-
-% \section{Conferences and Presentations}
-% \CVSubHeadingListStart
-% %    \CVSubheading % Example
-% %      {Work Presented}{When}
-% %      {Occasion}{}
-% \CVSubheading
-% {}{}{}{}
-% \CVSubHeadingListEnd
-
-%-----HONORS AND AWARDS--------------------------------------------------------
-% \section{Honors and Awards}
-% \CVSubHeadingListStart
-% %    \CVSubheading %Example
-% %      {What}{When}
-% %      {Short Description}{}
-% \CVSubheading
-% {}{}{}{}
-% \CVSubHeadingListEnd
-
-%-----TEACHING EXPERIENCE------------------------------------------------------
-\begin{comment}
-Section is here as it applied to my application for positions in academia.
-Remember to tailor the resume for to the position.
-\end{comment}
-
-\section{Conference and Teaching Experience}
-\CVSubHeadingListStart
-%    \CVSubheading
-%      {What}{When}
-%      {School}{Where}
-\CVSubheading
-{Operating System Teaching Assistant}{February 2021 -- June 2021}
-{Department of Computer Science and Engineering, NSYSU}{Kaohsiung, Taiwan}
-
-\CVSubheading
-{Maker and Microprocessor}{June 2021 -- July 2021}
-{Lan Tan Junior High School}{Chiayi, Taiwan}
-
-\CVSubheading
-{Macaca Cup Hackathon}{August 2020}
-{SITCON Lighting Talk}{Taiwan, Taiwan}
-
-\CVSubHeadingListEnd
-
-%-----COMMUNITY INVOLVEMENT----------------------------------------------------
-\section{Community Involvement}
-\CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What you did}{When you worked there}
-%      {Who you worked for}{Where they are located}
-\CVSubheading
-{Sharestart}{2019 -- present}{Volunteer}{Taiwan}
-\CVSubheading
-{MOPCON}{2019}{Sponsorship team}{Kaohsiung, Taiwan}
-\CVSubHeadingListEnd
-
-%-----SKILLS-------------------------------------------------------------------
-\begin{comment}
-This section is compressed from the various skills sections that Euro CV
-recommends.
-\end{comment}
-
-\section{Skills}
-\begin{itemize}[leftmargin=0.5cm, label={}]
-  \small{\item{
-        \textbf{Languages}{: Chinese (Native), English} \\
-        \textbf{Programming}{: Modern C++(17), C (kernel module), Shell script, Python, Golang } \\
-        \textbf{Skill}{: Linux, Docker, Git, Nginx, mongoDB } \\
-        \textbf{Document Creation}{: \LaTeX, Markdown} \\
-        }}
-\end{itemize}
-
-%------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \end{document}

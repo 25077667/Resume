@@ -1,5 +1,16 @@
+.PHONY: src all clean
 
-all:
-	latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -shell-escape -enable-write18 -recorder Readme.tex
+TEX = latexmk
+RESUME_DIR = src
+RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
+BUILD_DIR = ./build
+TEMPLATE = awesome-cv.cls
+
+all: resume.pdf
+	cp -f build/$< .
+
+resume.pdf: resume.tex $(RESUME_SRCS) $(TEMPLATE)
+	$(TEX) -xelatex -output-directory=$(BUILD_DIR) $<
+
 clean:
-	rm -f `ls -p | grep -v "/\|resume.tex\|resume.pdf\|Makefile"`
+	$(RM) -r $(BUILD_DIR)

@@ -1,92 +1,66 @@
-%-------------------------------------------------------------------------------
-%	SECTION TITLE
-%-------------------------------------------------------------------------------
-\cvsection{Projects}
+\section*{Selected Open Sourced Projects}
+\vspace*{-17pt}
+\begin{multicols}{2}
+\def\customTextWidth{0.45\textwidth}
+\cventry
+{Django renderer in C++}
+{Author}
+{GitHub} % Location
+{Fall 2022, present} % Date(s)
+{
+    \vspace{5pt}
+    \begin{cvitem} % Description(s)
+    \item {A Django language supporting renderer in \textbf{C++20}}
+    \item {Using \textbf{co-routine}, \textbf{conan}, \textbf{boost}, \textbf{CMake}}
+    \item {Familiar with \textbf{Functional programming}, \textbf{Serialization}}
+    \end{cvitem}
+}
 
+\cventry
+{Facebooc}
+{Main developer/Leader}
+{GitHub} % Location
+{Apr 2022, present} % Date(s)
+{
+    \vspace{5pt}
+    \begin{cvitem} % Description(s)
+        \item {A Facebook implementation in \textbf{GNU C11}}
+        \item {Familiar with \textbf{Copy-on-Write}, \textbf{aio}, \textbf{SOLID} pattern, \textbf{madvice}, \textbf{zero-copy} in C}
+        \item {Familiar with \textbf{gdb}, \textbf{Address sanitizer}, \textbf{Valgrind} in debugging}
+        \item {Familiar with \textbf{GNU Makefile}, \textbf{GitHub CI} to build and release}
+    \end{cvitem}
+}
 
-%-------------------------------------------------------------------------------
-%	CONTENT
-%-------------------------------------------------------------------------------
-\begin{cventries}
-    %---------------------------------------------------------
-    \cventry
-    {Author}
-    {Django renderer in C++}
-    {GitHub} % Location
-    {Fall 2022, present} % Date(s)
-    {
-        \begin{cvitems} % Description(s)
-        \item {A Django language supporting renderer in \textbf{C++20}}
-        \item {Using \textbf{co-routine}, \textbf{conan}, \textbf{boost}, \textbf{CMake}}
-        \item {Familiar with \textbf{Functional programming}, \textbf{Serialization}}
-        \item {\url{https://github.com/25077667/Django_cpp}}
-        \end{cvitems}
-    }
+\cventry
+{TCP-over-UDP}
+{Author}
+{GitHub} % Location
+{Jun 2022, present} % Date(s)
+{
+    \vspace{5pt}
+    \begin{cvitem} % Description(s)
+        \item {Implement TCP over UDP in \textbf{Modern C++20}}
+        \item {Familiar with \textbf{template meta-programming}, \textbf{zero-copy}, \textbf{SSO}, \textbf{Object compile time optimization}}
+        \item {Familiar with \textbf{VTABLE}, \textbf{RAII}, \textbf{pImpl} \dots for \textbf{C++ internal}}
+        \item Familiar with \textbf{Timerfd} in Linux
+        \item Familiar with \textbf{CMake} to build and release
+    \end{cvitem}
+}
 
-    %---------------------------------------------------------
-    \cventry
-    {Main developer/Leader}
-    {Facebooc}
-    {GitHub} % Location
-    {Apr 2022, present} % Date(s)
-    {
-        \begin{cvitems} % Description(s)
-            \item {A Facebook implementation in \textbf{GNU C11}}
-            \item {Familiar with \textbf{Copy-on-Write}, \textbf{aio}, \textbf{SOLID} pattern, \textbf{madvice}, \textbf{zero-copy} in C}
-            \item {Familiar with \textbf{gdb}, \textbf{Address sanitizer}, \textbf{Valgrind} in debugging}
-            \item {Familiar with \textbf{GNU Makefile}, \textbf{GitHub CI} to build and release}
-            \item {\url{https://github.com/25077667/facebooc}}
-        \end{cvitems}
-    }
+\cventry
+{High Scalability Wireguard VPN Server}
+{Author}
+{National Sun Yat-sen University (NSYSU)} % Location
+{Apr 2021, Jun 2021} % Date(s)
+{
+    \vspace{5pt}
+    \begin{cvitem} % Description(s)
+        \item {Using docker swarm to connect containers in different hosts}
+        \item {Cost \$1000 NTD in hardware to serve over \textbf{5000} clients \textbf{concurrently}}
+        \item {Using \textbf{Prometheus}, \textbf{Grafana}, \textbf{Wireguard}, \textbf{Docker-compose}, \textbf{fail2ben}, \textbf{ufw}}
+    \end{cvitem}
+}
 
-    %---------------------------------------------------------
-    \cventry
-    {Maintainer}
-    {TCP-over-DP}
-    {} % Location
-    {Jun 2022, present} % Date(s)
-    {
-        \begin{cvitems} % Description(s)
-            \item {Implement TCP over UDP in \textbf{Modern C++20}}
-            \item {Familiar with \textbf{template meta-programming}, \textbf{zero-copy}, \textbf{SSO}, \textbf{Object compile time optimization}}
-            \item {Familiar with \textbf{Virtual table}, \textbf{RAII}, \textbf{pImpl} \dots for \textbf{C++ internal}}
-            \item Familiar with \textbf{Timerfd} in Linux
-            \item Familiar with \textbf{CMake} to build and release
-            \item {\url{https://scc-net.tw}}
-        \end{cvitems}
-    }
-
-    %---------------------------------------------------------
-    \cventry
-    {Main developer/Leader}
-    {The Container Security in Healthcare Data Exchange System}
-    {National Sun Yat-sen University (NSYSU)} % Location
-    {Feb 2021, present} % Date(s)
-    {
-        \begin{cvitems} % Description(s)
-            \item {\textbf{Best Paper Award in CISC2022}}
-            \item {Bachelor's degree graduation project}
-            \item {Using \textbf{eBPF}, \textbf{seccomp}}
-            \item {Familiar with \textbf{cgroup}, \textbf{namespace}, \textbf{LSM}, \textbf{seccomp} in Linux}
-            \item {\url{https://github.com/25077667/Container_Security/}}
-        \end{cvitems}
-    }
-
-    %---------------------------------------------------------
-    \cventry
-    {Maintainer}
-    {High Scalability Wireguard VPN Server}
-    {National Sun Yat-sen University (NSYSU)} % Location
-    {Apr 2021, Jun 2021} % Date(s)
-    {
-        \begin{cvitems} % Description(s)
-            \item {Using docker swarm to connect containers in different hosts}
-            \item {Cost \$1000 NTD in hardware to serve over \textbf{5000} clients \textbf{concurrently}}
-            \item {Using \textbf{Prometheus}, \textbf{Grafana}, \textbf{Wireguard}, \textbf{Docker-compose}, \textbf{fail2ben}, \textbf{ufw}}
-            \item {\url{https://github.com/25077667/scalable_wg}}
-        \end{cvitems}
-    }
-
-
-    %---------------------------------------------------------
-\end{cventries}
+% unset customTextWidth
+\def\customTextWidth{\textwidth}
+\end{multicols}

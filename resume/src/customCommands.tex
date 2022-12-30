@@ -1,0 +1,35 @@
+\usepackage{hyperref}
+
+\usepackage{fontawesome5}
+
+\newcommand{\email}[1]{\faEnvelope \href{mailto:#1}{\ #1}}
+\newcommand{\github}[1]{\faGithub \href{#1}{\ #1}}
+\newcommand{\name}[1]{\textbf{#1}}
+\newcommand{\homepage}[1]{\faHome \href{#1}{\ #1}}
+\newcommand{\blog}[1]{\faBlog \href{#1}{\ #1}}
+
+
+% A newcommand named cventry is defined. It takes 5 arguments.
+% The first argument is the title of the entry,
+% the second is the subtitle,
+% the third is the location,
+% the fourth is the date,
+% and the fifth is the description.
+
+\def\customTextWidth{\textwidth}
+
+\newcommand{\cventry}[5]{
+  \noindent
+  \vspace{-1pt}
+  \begin{tabular*}{\customTextWidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & {\small #2}\vspace{1pt}\\ % top row of resume entry
+    \textit{#3} & {\small #4} % second row of resume entry
+  \end{tabular*}
+  \vspace{-4pt}
+  #5
+}
+
+% cvitem is a newenvironment wrapping around the itemize environment.
+\newenvironment{cvitem}{
+  \begin{itemize}[noitemsep]
+}{\end{itemize}}

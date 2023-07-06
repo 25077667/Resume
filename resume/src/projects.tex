@@ -1,18 +1,31 @@
 \section*{Selected Open Sourced Projects}
-\vspace*{-17pt}
+\vspace*{-25pt}
 \begin{multicols}{2}
-\def\customTextWidth{0.45\textwidth}
+\def\customTextWidth{0.5\textwidth}
+\cventry
+{VMPilot}
+{Author}
+{GitHub}
+{Jun 2023, present}
+{
+    \begin{cvitem}
+        \item {A C++17's VM SDK under LLVM IR}
+        \item {Modern and post-quantum thm. perfect secrecy}
+        \item {Decompile, runtime JIT concurrently, \dots}
+        \item {CMake, CPM, BLAKE3-cmake, \dots}
+    \end{cvitem}
+}
+
 \cventry
 {Django renderer in C++}
 {Author}
 {GitHub} % Location
-{Fall 2022, present} % Date(s)
+{Oct 2022, Dec 2022} % Date(s)
 {
-    \vspace{5pt}
     \begin{cvitem} % Description(s)
-    \item {A Django language supporting renderer in \textbf{C++20}}
-    \item {Using \textbf{co-routine}, \textbf{conan}, \textbf{boost}, \textbf{CMake}}
-    \item {Familiar with \textbf{Functional programming}, \textbf{Serialization}}
+    \item {A Django language supporting renderer in C++20}
+    \item {Using \textbf{co-routine}, conan}
+    \item {Familiar with \textbf{FP}, \textbf{Serialization}}
     \end{cvitem}
 }
 
@@ -20,44 +33,27 @@
 {Facebooc}
 {Main developer/Leader}
 {GitHub} % Location
-{Apr 2022, present} % Date(s)
+{Apr 2022, Aug 2022} % Date(s)
 {
-    \vspace{5pt}
     \begin{cvitem} % Description(s)
-        \item {A Facebook implementation in \textbf{GNU C11}}
-        \item {Familiar with \textbf{Copy-on-Write}, \textbf{aio}, \textbf{SOLID} pattern, \textbf{madvice}, \textbf{zero-copy} in C}
-        \item {Familiar with \textbf{gdb}, \textbf{Address sanitizer}, \textbf{Valgrind} in debugging}
-        \item {Familiar with \textbf{GNU Makefile}, \textbf{GitHub CI} to build and release}
+        \item {A Facebook impl. in \textbf{GNU C11} under RFC2616\dots}
+        \item {Familiar with \textbf{CoW}, \textbf{aio}, SOLID, \textbf{madvice}, \textbf{zero-copy}}
+        \item {Familiar with gdb, \textbf{ASAN}, \textbf{Valgrind} for debugging}
+        \item {Familiar with GNU Makefile, GitHub CI}
     \end{cvitem}
 }
 
 \cventry
-{TCP-over-UDP}
-{Author}
-{GitHub} % Location
-{Jun 2022, present} % Date(s)
+{Misc you can ask}
+{}
+{GitHub/GitLab}
+{2023}
 {
-    \vspace{5pt}
-    \begin{cvitem} % Description(s)
-        \item {Implement TCP over UDP in \textbf{Modern C++20}}
-        \item {Familiar with \textbf{template meta-programming}, \textbf{zero-copy}, \textbf{SSO}, \textbf{Object compile time optimization}}
-        \item {Familiar with \textbf{VTABLE}, \textbf{RAII}, \textbf{pImpl} \dots for \textbf{C++ internal}}
-        \item Familiar with \textbf{Timerfd} in Linux
-        \item Familiar with \textbf{CMake} to build and release
-    \end{cvitem}
-}
-
-\cventry
-{High Scalability Wireguard VPN Server}
-{Author}
-{National Sun Yat-sen University (NSYSU)} % Location
-{Apr 2021, Jun 2021} % Date(s)
-{
-    \vspace{5pt}
-    \begin{cvitem} % Description(s)
-        \item {Using docker swarm to connect containers in different hosts}
-        \item {Cost \$1000 NTD in hardware to serve over \textbf{5000} clients \textbf{concurrently}}
-        \item {Using \textbf{Prometheus}, \textbf{Grafana}, \textbf{Wireguard}, \textbf{Docker-compose}, \textbf{fail2ben}, \textbf{ufw}}
+    \begin{cvitem}
+        \item {Fixed spdlog (\textbf{19k, Gabime}) IO inconsistency issue}
+        \item {Fixed cpprestsdk (\textbf{7.5k, Microsoft}) UTF-16 decode issue}
+        \item {Improved distro (\textbf{Python}) code quality +0.03}
+        \item {Fixing retdec (\textbf{7.4k, avast}) compilation error on Apple Clang}
     \end{cvitem}
 }
 

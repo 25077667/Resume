@@ -1,13 +1,21 @@
 \usepackage{hyperref}
-
+\usepackage{titlesec}
+\usepackage{xparse}
 \usepackage{fontawesome5}
+\usepackage{xstring}
 
 \newcommand{\email}[1]{\faEnvelope \href{mailto:#1}{\ #1}}
-\newcommand{\github}[1]{\faGithub \href{#1}{\ #1}}
+\newcommand{\github}[1]{\faGithub \href{#1}{\ \StrSubstitute{#1}{https://}{}{}}}
 \newcommand{\name}[1]{\textbf{#1}}
-\newcommand{\homepage}[1]{\faHome \href{#1}{\ #1}}
-\newcommand{\blog}[1]{\faBlog \href{#1}{\ #1}}
+\newcommand{\homepage}[1]{\faHome \href{#1}{\ \StrSubstitute{#1}{https://}{}{}}}
+\newcommand{\blog}[1]{\faBlog \href{#1}{\ \StrSubstitute{#1}{https://}{}{}}}
 
+% Set title format for sections
+\titleformat{\section}
+{\Large\bfseries}
+{}
+{0em}
+{\vspace{-.8em}}[]
 
 % A newcommand named cventry is defined. It takes 5 arguments.
 % The first argument is the title of the entry,
@@ -20,9 +28,9 @@
 
 \newcommand{\cventry}[5]{
   \noindent
-  \vspace{-1pt}
+  \vspace{-2pt}
   \begin{tabular*}{\customTextWidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & {\small #2}\vspace{1pt}\\ % top row of resume entry
+    \textbf{#1} & {\small #2}\vspace{.2pt}\\ % top row of resume entry
     \textit{#3} & {\small #4} % second row of resume entry
   \end{tabular*}
   \vspace{-4pt}

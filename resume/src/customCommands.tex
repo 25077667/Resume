@@ -37,6 +37,21 @@
   #5
 }
 
+% The first argument is the title of the project,
+% The second is link
+% The third is the description of the project.
+\newcommand{\onelineproject}[3]{
+  % \vspace{.8em}
+  % \noindent
+  \textbf{\href{#2}{#1}} \vspace{.2pt} #3
+}
+
+\newcommand{\onelineprojectNoLink}[2]{
+  % \vspace{.8em}
+  % \noindent
+  \textbf{#1}\vspace{.2pt} #2
+}
+
 % cvitem is a newenvironment wrapping around the itemize environment.
 \newenvironment{cvitem}{
   \begin{itemize}[noitemsep]

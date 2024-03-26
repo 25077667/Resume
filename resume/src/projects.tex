@@ -1,77 +1,34 @@
-\section*{Selected Open Sourced Projects}
-\vspace*{-25pt}
-\begin{multicols}{2}
-\def\customTextWidth{0.5\textwidth}
-\cventry
-{VMPilot}
-{Author}
-{GitHub}
-{Jun 2023, present}
-{
-    \begin{cvitem}
-        \item {A C++17's VM SDK under LLVM IR}
-        \item {Modern and post-quantum thm. perfect secrecy}
-        \item {Decompile, runtime JIT concurrently, \dots}
-        \item {CMake, CPM, BLAKE3-cmake, \dots}
-    \end{cvitem}
-}
+\section*{Open Source Projects}
 
-\cventry
-{Standalone Python}
-{Author}
-{GitHub}
-{Sep 2023}
-{
-    \begin{cvitem}
-        \item {Seamlessly compatible with legacy systems.}
-        \item {Ideal for \textbf{GLIBC-incompatible} setups.}
-        \item {Handpicked Python versions for your needs.}
-        \item {Works effortlessly across all Linux platforms.}
-    \end{cvitem}
-}
+\begin{cvitem}
+    \item \onelineproject{VMPilot} {https://github.com/25077667/vmpilot} 
+    {is an advanced SDK employing post-quantum cryptography and compile-time/runtime obfuscation
+    within a secure-by-design virtual machine to shield software from reverse engineering.}
+    \item \onelineproject{Facebooc} {https://github.com/25077667/facebooc} 
+    {is a comprehensive C-based proof of concept of a Facebook clone, showcasing
+    end-to-end development from TCP socket programming to user interface design.}
+    \item \onelineproject{scalable\_wg}{https://github.com/25077667/scalable\_wg}
+    {is a compact PoC for a scalable WireGuard server, designed to support 
+    over 5000 connections even on NT1000 hardware. It uses around 100 lines
+    to efficiently load-balance and manage WireGuard tunnels.}
+    \item \onelineproject{Sonar [C]ernel Commander (SCC)}{https://github.com/25077667/sonar-cernel-commander}
+    {is an advanced Linux kernel module that specializes in syscall hooking and event logging. Designed 
+    with performance and extensibility in mind.}
+    \item \onelineproject{gcc (libstdc++)} {https://github.com/25077667/gcc/commit/715a82e84959c9493af1c925c109806f053a3358}
+    {contributes about performance optimization for the GCC standard library, from $O(N^2)$ to $\Theta(N)$.(ongoing)}
+    \item \onelineproject{spdlog (\textbf{19k, Gabime})}{https://github.com/Esri/spdlog/pull/3}
+    {fixes an I/O inconsistency issue in the spdlog library.}
+    \item \onelineproject{cpprestsdk (\textbf{7.5k, Microsoft})} {https://github.com/microsoft/cpprestsdk/pull/1746}
+    {resolved a UTF-16 decoding issue, preventing overflow exceptions during serialization.}
+\end{cvitem}
 
-\cventry
-{Django renderer in C++}
-{Author}
-{GitHub} % Location
-{Oct 2022, Dec 2022} % Date(s)
-{
-    \begin{cvitem} % Description(s)
-    \item {A Django language supporting renderer in C++20}
-    \item {Using \textbf{co-routine}, conan}
-    \item {Familiar with \textbf{FP}, \textbf{Serialization}}
-    \end{cvitem}
-}
+\section*{Non-Open Source Projects \small{(Personal research)}}
 
-\cventry
-{Facebooc}
-{Main developer/Leader}
-{GitHub} % Location
-{Apr 2022, Aug 2022} % Date(s)
-{
-    \begin{cvitem} % Description(s)
-        \item {A Facebook impl. in \textbf{GNU C11} under RFC2616\dots}
-        \item {Familiar with \textbf{CoW}, \textbf{aio}, SOLID, \textbf{madvice}, \textbf{zero-copy}}
-        \item {Familiar with gdb, \textbf{ASAN}, \textbf{Valgrind} for debugging}
-        \item {Familiar with GNU Makefile, GitHub CI}
-    \end{cvitem}
-}
+\begin{cvitem}
+    \item \onelineprojectNoLink{Kernel Rootkit}{is a Linux kernel rootkit that hides kernel modules,
+    zero-file-landing proccesses. Which is also a deep study of kprobes, signal handling, 
+    input-event subsystem, kernel hacking etc.}
 
-\cventry
-{Misc you can ask}
-{}
-{GitHub/GitLab}
-{2023}
-{
-    \begin{cvitem}
-        \item {Optimize (\textbf{GCC/libstdc++}) performance of rfind (on going)}
-        \item {Fixed spdlog (\textbf{19k, Gabime}) IO inconsistency issue}
-        \item {Fixed cpprestsdk (\textbf{7.5k, Microsoft}) UTF-16 decode issue}
-        \item {Improved distro (\textbf{Python}) code quality +0.03}
-        \item {Fixing retdec (\textbf{7.4k, avast}) compilation error on Apple Clang}
-    \end{cvitem}
-}
-
-% unset customTextWidth
-\def\customTextWidth{\textwidth}
-\end{multicols}
+    \item \onelineprojectNoLink{DynamicLinkingLinux}{is a DLL-injection technique for Linux,
+    injecting shared objects into running processes to modify their behavior. (developing)}
+\end{cvitem}
